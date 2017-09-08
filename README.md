@@ -29,7 +29,6 @@ Java核心技术学习代码兼测试案例<br>
     ├── org.javacore.lambda		// lambda表达式
     ├── org.javacore.stream		// Stream API 集合的流式操作
 	│
-	拼命更新！顶！d=====(￣▽￣*)b
 
 详细目录：
 
@@ -130,5 +129,4 @@ Java核心技术学习代码兼测试案例<br>
    	├── 	SimplePriorities.java			// 线程优先级的使用
 	├── 	SingleThreadExecutor.java		// SingleThreadExecutor的使用
 	├── 	SleepingTask.java			    // 休眠线程sleep的使用
-	拼命更新！顶！d=====(￣▽￣*)b
  

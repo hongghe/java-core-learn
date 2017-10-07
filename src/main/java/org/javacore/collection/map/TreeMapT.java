@@ -7,6 +7,7 @@ import java.util.TreeMap;
  * @author Jeff Lee
  * @since 2015-6-18 21:36:04
  * 	TreeMap 的使用
+ * 	有序的（红黑树）
  */
 public class TreeMapT
 {

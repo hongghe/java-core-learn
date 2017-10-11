@@ -3,11 +3,6 @@ package org.javacore.collection.map;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * @author Jeff Lee
- * @since 2015-6-18 21:36:04
- * HashMap的Add方法
- */
 public class HaspMapT{
 	public static void main(String[] args)
 	{
@@ -24,18 +19,16 @@ public class HaspMapT{
 		String number = "1206010035";
 		//设置对象
 		employees.put(number, new Employee());
-		System.out.println(employees);
-
 		// 获取对象
-		System.out.println(employees.get(number));
+        System.out.println(employees);
 	}
 
 	/**
 	 * HaspMap的put方法
 	 */
-	@SuppressWarnings({ "unchecked", "rawtypes" })
 	public static void nullOper(){
 		Map map = new HashMap<String, String>();
+		// 一个键只能有一个值
 		map.put(null, "null01");
 		map.put(null, "null02");
 		System.out.println(map);

@@ -2,12 +2,6 @@ package org.javacore.collection.map;
 
 import java.util.HashMap;
 
-
-/**
- * @author Jeff Lee
- * @since 2015-6-18 22:05:44
- * 	HashMap 操作对象的决定因子：hashCode与equals
- */
 public class HashMapObjT{
 	public static void main(String[] args){
 		HashMap<A, Integer> hashMapA = new HashMap<A, Integer>();

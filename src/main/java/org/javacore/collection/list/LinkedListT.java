@@ -18,6 +18,7 @@ public class LinkedListT {
         b.add("bbb2");
 
         ListIterator<String> aIter = a.listIterator();
+        System.out.println(aIter);
 
         ListIterator<String> bIter = b.listIterator();
 

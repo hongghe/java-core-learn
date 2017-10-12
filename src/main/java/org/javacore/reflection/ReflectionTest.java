@@ -6,7 +6,16 @@ import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
 
 /**
- *
+ * 反射的基本使用
+ * 一、获取CLass的方法
+ *  1.类名.clss
+ *  2.对象名.getClass
+ *  3.Class.forName("要加载的类")
+ * 二、大致使用流程
+ *  1. 用上述三种方法获取特定类的Class类，即该类对应的字节码
+ *  2. 调用构造方法类Constructor的newInstance(Object... initargs)方法新建对象
+ *  3. 调用CLass对象的getMethod(String name, Class<?>... parameterTypes)获取方法对象
+ *  4. 调用方法对象类Method的invoke(Object obj, Object... args)方法，调用对象上相应的方法
  */
 
 public class ReflectionTest {

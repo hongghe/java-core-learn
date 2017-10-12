@@ -3,11 +3,8 @@ package org.javacore.reflection;
 import java.lang.reflect.Array;
 import java.util.Arrays;
 
-
 /**
- * @author Jeff Lee
- * @since 2015-11-9 10:45:19
- * 反射扩容对象数组
+ * 扩容数组
  */
 public class ArrayCopy {
     public static void main(String[] args) {

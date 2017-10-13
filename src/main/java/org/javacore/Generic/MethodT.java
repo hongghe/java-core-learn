@@ -1,4 +1,4 @@
-package org.javacore.classt;
+package org.javacore.Generic;
 
 
 /**
@@ -21,7 +21,7 @@ public class MethodT {
     }
 
     public static void main(String[] args) throws ClassNotFoundException,InstantiationException, IllegalAccessException{
-        Object obj = MethodT.genericMethod(Class.forName("org.javacore.classt.MethodT"));
+        Object obj = MethodT.genericMethod(Class.forName("org.javacore.Generic.MethodT"));
         System.out.println(obj);
     }
 }

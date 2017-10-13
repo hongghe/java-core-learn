@@ -1,7 +1,6 @@
-package org.javacore.classt;
+package org.javacore.Generic;
 
 
-import java.time.Instant;
 import java.util.Random;
 
 /**

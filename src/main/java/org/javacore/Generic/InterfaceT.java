@@ -1,4 +1,4 @@
-package org.javacore.classt;
+package org.javacore.Generic;
 
 /**
  *  接口的泛型

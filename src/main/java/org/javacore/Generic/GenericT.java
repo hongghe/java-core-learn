@@ -1,6 +1,10 @@
 package org.javacore.Generic;
 
+import java.lang.reflect.Method;
+import java.lang.reflect.ParameterizedType;
+import java.lang.reflect.Type;
 import java.util.ArrayList;
+import java.util.Map;
 
 /**
  * java泛型
@@ -12,9 +16,32 @@ import java.util.ArrayList;
  * Integer      -- 实际类型
  */
 
+
+
+/**
+ * 类型参数的类型推断（编译器判断泛型方法的实际类型参数的过程）
+ *
+ * 1.当某个类型变量只在整个参数列表的所有参数的返回值的一处被采用了，那么根据调用方法时该处的实际应用类型来确定。
+ * 即直接根据调用方法时传递的参数类型或返回值来决定泛型参数的类型。例如：
+ * swap(new String[3], 1, 2)  ->   static <E> void swap(E[]a, int i, int j)
+ *
+ * 2.当某个类型变量在整个参数列表的所有参数和返回值多处被应用了，如果调用方法时这么多处的实际应用类型都对应同一种类型
+ * 泛型参数的类型就是该类型。例如：
+ * add(3,5) ->  static <T> T add(T a, T b)
+ *
+ * 3.当某个类型变量在整个参数列表的所有参数和返回值的多处被采用了，如果调用方法时这么多处的实际类型对应不同类型，并且
+ * 没有返回值，取多个参数中最大类型的交集，即第一个公共父类。例如
+ * file(new Integer[3], 3.5) -> static <T> void file(T a[], T v) 该编译出来就是Number类型，编译通过，运行出问题
+ *
+ * 4. 当某个类型变量在整个参数列表的所有参数和返回值中的多处被应用了，如果调用方法时这么多处的实际应用类型对应不同的
+ * 类型,且使用有返回值，则优先考虑返回值的类型。例如：
+ * int x = add(3,3.5) -> static <T> T add(T a,T b)
+ * 上例编译报错,x类型改为float也报错，改为Number成功。
+ */
+
 public class GenericT {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception{
         /**
          * ? 通配符表示任意类型，使用？通配符可以引用各种参数化类型
          * extends 限定通配符的上边界，实际类型是该类或者该类的子类
@@ -27,6 +54,7 @@ public class GenericT {
 
         GenericT obj = new GenericT();
         obj.testType();
+        getParamType();
     }
 
 
@@ -72,25 +100,25 @@ public class GenericT {
         return y;
     }
 
-    /**
-     * 类型参数的类型推断（编译器判断泛型方法的实际类型参数的过程）
-     *
-     * 1.当某个类型变量只在整个参数列表的所有参数的返回值的一处被采用了，那么根据调用方法时该处的实际应用类型来确定。
-     * 即直接根据调用方法时传递的参数类型或返回值来决定泛型参数的类型。例如：
-     * swap(new String[3], 1, 2)  ->   static <E> void swap(E[]a, int i, int j)
-     *
-     * 2.当某个类型变量在整个参数列表的所有参数和返回值多处被应用了，如果调用方法时这么多处的实际应用类型都对应同一种类型
-     * 泛型参数的类型就是该类型。例如：
-     * add(3,5) ->  static <T> T add(T a, T b)
-     *
-     * 3.当某个类型变量在整个参数列表的所有参数和返回值的多处被采用了，如果调用方法时这么多处的实际类型对应不同类型，并且
-     * 没有返回值，取多个参数中最大类型的交集，即第一个公共父类。例如
-     * file(new Integer[3], 3.5) -> static <T> void file(T a[], T v) 该编译出来就是Number类型，编译通过，运行出问题
-     *
-     * 4. 当某个类型变量在整个参数列表的所有参数和返回值中的多处被应用了，如果调用方法时这么多处的实际应用类型对应不同的
-     * 类型,且使用有返回值，则优先考虑返回值的类型。例如：
-     * int x = add(3,3.5) -> static <T> T add(T a,T b)
-     * 上例编译报错,x类型改为float也报错，改为Number成功。
-     */
+
+    // 通过反射获得泛型的实际类型参数
+    public static void getParamType() throws Exception {
+        Method method = GenericT.class.getMethod("applyMap", Map.class);
+        // 获取泛型参数的实际类型
+        Type[] types = method.getGenericParameterTypes();
+        System.out.println(types[0]);
+        // 参数化的类型
+        ParameterizedType pType = (ParameterizedType)types[0];
+        // 原始类型
+        System.out.println(pType.getRawType());
+        // 实际类型参数
+        System.out.println(pType.getActualTypeArguments()[0]);
+        System.out.println(pType.getActualTypeArguments()[1]);
+
+    }
+
+    public static void applyMap(Map<Integer, String> map) {
+
+    }
 
 }

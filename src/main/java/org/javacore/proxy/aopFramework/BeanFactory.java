@@ -32,6 +32,24 @@ public class BeanFactory {
         } catch (IllegalAccessException e) {
             e.printStackTrace();
         }
-        return "";
+        if(bean instanceof ProxyFactoryBean) {
+            ProxyFactoryBean proxyFactoryBean = (ProxyFactoryBean) bean;
+            Advice advice = null;
+            Object target = null;
+            try {
+                advice = (Advice) Class.forName(properties.getProperty(name + ".advice")).newInstance();
+                target = Class.forName(properties.getProperty(name + ".target")).newInstance();
+            } catch (ClassNotFoundException e) {
+                e.printStackTrace();
+            } catch (InstantiationException e) {
+                e.printStackTrace();
+            } catch (IllegalAccessException e) {
+                e.printStackTrace();
+            }
+
+            proxyFactoryBean.setAdvice(advice);
+            proxyFactoryBean.setTarget(target);
+        }
+        return bean;
     }
 }

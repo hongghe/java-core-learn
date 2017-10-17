@@ -17,9 +17,9 @@ public class DynamicProxyDemo {
 
     public static void main(String[] args) {
         RealSubject subject = new RealSubject();
-        ProxyHandler handler = new ProxyHandler(subject);
+        ProxyHandler invocationHandler = new ProxyHandler(subject);
         // 创建代理对象
-        Subject ProxySubject = (Subject) Proxy.newProxyInstance(RealSubject.class.getClassLoader(), RealSubject.class.getInterfaces(), handler);
+        Subject ProxySubject = (Subject) Proxy.newProxyInstance(RealSubject.class.getClassLoader(), RealSubject.class.getInterfaces(), invocationHandler);
         ProxySubject.request();
     }
 

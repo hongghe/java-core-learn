@@ -1,4 +1,4 @@
-package org.javacore.date;
+package org.javacore.time;
 
 import java.text.ParseException;
 import java.util.Date;

@@ -49,6 +49,8 @@ public class BeanFactory {
 
             proxyFactoryBean.setAdvice(advice);
             proxyFactoryBean.setTarget(target);
+            Object proxy = ((ProxyFactoryBean) bean).getProxy();
+            return proxy;
         }
         return bean;
     }

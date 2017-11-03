@@ -1,4 +1,4 @@
-### 该项目为fork的github上的java-core-learn，自己学习更改补充
+### 该项目为fork的github上的java-core-learn，自己学习更改补充，重新整理学习
 ## 项目结构
 - src 目录<br>
 Java核心技术学习代码兼测试案例<br>

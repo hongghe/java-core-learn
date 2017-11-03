@@ -4,6 +4,7 @@ package org.javacore.base.String;
  * @author BYSocket
  * @since 2016-01-06 20:07:00
  * 对象做为参数传递是传递的对象的引用，会修改对象的值
+ * 基本数据类型
  */
 public class StringT2 {
 
@@ -18,11 +19,16 @@ public class StringT2 {
         String str = "i am jackson";
         changString(str);
         System.out.println(str);
-        String[] strArr = {"hello", "world"};
+        String[] strArr = {"hello ", "haobin"};
         changArr(strArr);
         for(int i=0; i<strArr.length; i++){
             System.out.println(strArr[i]);
         }
+        changeArrChar(strArr);
+        for(int i=0; i<strArr.length; i++){
+            System.out.println(strArr[i]);
+        }
+
     }
 
     public static void change(StringObject sb) {
@@ -43,6 +49,9 @@ public class StringT2 {
         for(String item : strArr){
             System.out.println(item);
         }
+    }
+    public static void changeArrChar(String[] strArr) {
+        strArr[0] = "hi hi";
     }
 }
 class StringObject {

@@ -18,7 +18,4 @@ public class ByteT {
         // 负数的二进制计算方法（补码）：反码加一
         System.out.println(~5);
     }
-
-    public void test() {
-    }
 }

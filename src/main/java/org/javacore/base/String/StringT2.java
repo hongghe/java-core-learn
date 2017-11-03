@@ -1,10 +1,9 @@
 package org.javacore.base.String;
 
 /**
- * @author BYSocket
- * @since 2016-01-06 20:07:00
- * 对象做为参数传递是传递的对象的引用，会修改对象的值
- * 基本数据类型
+ * 首先要说明的是java中是没有指针的，java中只存在值传递，只存在值传递！！！
+ * 然而我们经常看到对于对象（数组，类，接口）的传递似乎有点像引用传递，可以改变对象中某个属性的值。
+ * 但是不要被这个假象所蒙蔽，实际上这个传入函数的值是对象引用的拷贝，即传递的是引用的地址值，所以还是按值传递。
  */
 public class StringT2 {
 
@@ -19,6 +18,11 @@ public class StringT2 {
         String str = "i am jackson";
         changString(str);
         System.out.println(str);
+        /**
+         * java中实际上是没有引用传递的，不论是数组还是对象，传递的都是对象或数组引用的拷贝
+         * 指向的是这个对象或者数组，以下例子把传递的数组指向另一个数组，原数组的值仍然没有改变
+         * 如果把传递数组元素的值改变，原数组的值却改变了！
+         */
         String[] strArr = {"hello ", "haobin"};
         changArr(strArr);
         for(int i=0; i<strArr.length; i++){

@@ -3,9 +3,7 @@ package org.javacore.base.inter;
 import java.util.Arrays;
 
 /**
- * @author Jeff Lee
- * @since 2015-12-1 13:04:30
- *  使用接口的接口案例
+ * 使用接口的实例
  */
 interface ProcessorInter {
     String name();

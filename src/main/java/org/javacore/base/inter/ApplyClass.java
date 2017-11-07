@@ -2,6 +2,10 @@ package org.javacore.base.inter;
 
 import java.util.Arrays;
 
+/**
+ * 继承
+ * getClass是获取运行时对象的类信息
+ */
 class Processor {
     public String name(){
         return getClass().getSimpleName();

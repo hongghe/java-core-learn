@@ -1,4 +1,4 @@
-package org.javacore.base.inter;
+package org.javacore.base.object;
 
 import java.util.Arrays;
 
@@ -31,6 +31,7 @@ class dog {
     public String name;
     public int sex;
 }
+
 public class ApplyClass {
     public static void process(Processor p , Object input){
         System.out.println("调用对象名：" + p.name());

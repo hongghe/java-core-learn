@@ -1,4 +1,4 @@
-package org.javacore.base.inter;
+package org.javacore.base.object;
 
 import java.util.Arrays;
 

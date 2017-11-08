@@ -10,15 +10,16 @@ enum Color {
     RED, GREEN, BLANK, YELLOW
 }
 
-// 自定义函数
+// 自定义枚举函数
 enum ColorEnum {
 
     RED("红色", 1), GREEN("绿色", 2), BLANK("白色", 3), YELLO("黄色", 4);
 
-
+    // 设置属性
     private String name;
     private int index;
 
+    // 构造函数
     private ColorEnum(String name, int index) {
         this.name = name;
         this.index = index;
@@ -68,6 +69,8 @@ public class EnumT {
     }
 
     public static void main(String[] args) {
+        // 常量类型排序从0开始
+        System.out.println(Color.RED.ordinal());
         System.out.println(isRed(Color.BLANK));  //结果： false
         System.out.println(isRed(Color.RED));    //结果： true
 
@@ -81,5 +84,6 @@ public class EnumT {
         for( ColorEnum color : ColorEnum.values()){
             System.out.println( color + "  name: " + color.getName() + "  index: " + color.getIndex() );
         }
+
     }
 }

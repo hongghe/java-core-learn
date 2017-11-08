@@ -1,4 +1,4 @@
-package org.javacore.time;
+package org.javacore.base.time;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;

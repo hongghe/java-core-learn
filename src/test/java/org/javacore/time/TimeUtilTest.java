@@ -1,13 +1,14 @@
 package org.javacore.time;
 
+import org.javacore.base.time.TimeUtil;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runners.MethodSorters;
 
 import java.time.LocalDateTime;
 
-import static org.javacore.time.TimeUtil.TimeFormat.LONG_DATE_PATTERN_DOUBLE_SLASH;
-import static org.javacore.time.TimeUtil.TimeFormat.LONG_DATE_PATTERN_SLASH;
+import static org.javacore.base.time.TimeUtil.TimeFormat.LONG_DATE_PATTERN_DOUBLE_SLASH;
+import static org.javacore.base.time.TimeUtil.TimeFormat.LONG_DATE_PATTERN_SLASH;
 import static org.junit.Assert.assertEquals;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)

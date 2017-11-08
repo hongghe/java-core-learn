@@ -2,7 +2,6 @@ package org.javacore.base.object;
 
 /**
  * 枚举类的使用
- *
  * @Author: HaoBin
  * @Date 2017/11/7 18:47
  */

@@ -1,4 +1,4 @@
-package org.javacore.time;
+package org.javacore.base.time;
 
 import com.google.common.base.Preconditions;
 import com.google.common.collect.Maps;

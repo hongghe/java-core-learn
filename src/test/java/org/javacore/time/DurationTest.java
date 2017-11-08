@@ -1,5 +1,6 @@
 package org.javacore.time;
 
+import org.javacore.base.time.Duration;
 import org.junit.Assert;
 import org.junit.Test;
 

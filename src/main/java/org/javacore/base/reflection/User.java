@@ -1,8 +1,7 @@
-package org.javacore.reflection;
+package org.javacore.base.reflection;
+
 /**
- * @author Jeff Lee
- * @since 2015-9-8 09:35:14
- * 反射构造器使用的bean
+ * user bean
  */
 public class User {
 	private int id;

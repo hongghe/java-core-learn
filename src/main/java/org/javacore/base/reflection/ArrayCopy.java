@@ -1,10 +1,10 @@
-package org.javacore.reflection;
+package org.javacore.base.reflection;
 
 import java.lang.reflect.Array;
 import java.util.Arrays;
 
 /**
- * 扩容数组
+ * 通过反射扩容数组
  */
 public class ArrayCopy {
     public static void main(String[] args) {

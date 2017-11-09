@@ -1,4 +1,4 @@
-package org.javacore.reflection;
+package org.javacore.base.reflection;
 
 /**
  * 1. 对于元素同类型的数组，同维数组，class一样

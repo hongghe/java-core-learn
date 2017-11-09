@@ -22,7 +22,7 @@ Java核心技术学习代码兼测试案例<br>
 	├── org.javacore.io.byteoper		// Java IO 字节操作
 	├── org.javacore.io.zip			// Java IO ZIP压缩解压
 	├── org.javacore.nio			// Java NIO
-	├── org.javacore.reflection	// Java 反射
+	├── org.javacore.base.reflection	// Java 反射
 	├── org.javacore.rtti			// Java RTTI
 	├── org.javacore.thread		// Java 线程
     =================实战JAVA 8=================
@@ -103,7 +103,7 @@ Java核心技术学习代码兼测试案例<br>
 	├── 	MappedIO.java					// MappedByteBuffer与Old IO的性能比
 	├── 	UsingBuffers.java				// 利用buffer实现交换相邻字符
 	├── 	ViewBuffers.java				// 不同视图下的缓冲区
-	├── org.javacore.reflection		// Java 反射
+	├── org.javacore.base.reflection		// Java 反射
 	├── 	ArrayCopy.java					// 反射扩容对象数组
 	├── 	EmployeeClass.java				// 反射在继承中的案例
 	├── 	ObjectAnalyzer.java				// 反射对象分析工具

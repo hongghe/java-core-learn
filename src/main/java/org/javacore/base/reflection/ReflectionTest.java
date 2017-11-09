@@ -1,4 +1,4 @@
-package org.javacore.reflection;
+package org.javacore.base.reflection;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
@@ -8,7 +8,7 @@ import java.lang.reflect.Modifier;
 /**
  * 反射的基本使用
  * 一、获取CLass的方法
- *  1.类名.clss
+ *  1.类名.class
  *  2.对象名.getClass
  *  3.Class.forName("要加载的类")
  * 二、大致使用流程
@@ -25,7 +25,7 @@ public class ReflectionTest {
         // Class是创建类的类型信息（比起class关键字是大写的）
         Class cl = null;
         try {
-            cl = Class.forName("org.javacore.reflection.ReflectionTest");
+            cl = Class.forName("org.javacore.base.reflection.ReflectionTest");
             System.out.println("打印析构函数：");
             printConstructors(cl);
             System.out.println("打印方法：");

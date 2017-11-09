@@ -1,10 +1,8 @@
-package org.javacore.reflection;
+package org.javacore.base.reflection;
 
 
 /**
- * @author Jeff Lee
- * @since 2015-11-9 10:45:19
- * 反射在继承中的案例
+ * 反射在对象的继承中，是加载运行时对象所对应的类
  */
 class Employee {
     private String name;

@@ -10,13 +10,13 @@ import java.util.Collection;
  * @Author: HaoBin
  * @Date 2017/10/17 10:21
  */
-public class ProxyTest {
+public class ProxyClassInfo {
 
     public static void main(String[] args) {
         Class clazzProxy1 = Proxy.getProxyClass(Collection.class.getClassLoader(), Collection.class);
         System.out.println(clazzProxy1);
-        printConstructors(clazzProxy1);
-        printMethod(clazzProxy1);
+//        printConstructors(clazzProxy1);
+//        printMethod(clazzProxy1);
     }
     /**
      * @Auhtor: HaoBin

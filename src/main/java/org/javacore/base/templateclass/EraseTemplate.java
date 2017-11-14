@@ -12,6 +12,7 @@ import java.util.ArrayList;
  * eg: add(3,5) -> static <T> T add(T a,T b)
  * 3. 当某个类型变量在整个参数列表的所有参数和返回值中的多处被应用了，如果调用方法时这么多处的实际应用类型 对应不同的类型,且没有返回值，则取多个参数中的最大交集类型，即第一个公共父类。
  * eg: int x = add(3,3.5) -> static <T> T add(T a,T b) , x类型改为Number则编译通过
+ *
  * @Author: HaoBin
  * @Date 2017/11/13 18:25
  */

@@ -1,9 +1,9 @@
-package org.javacore.base.javabyte;
+package org.javacore.base.bit;
 
 /**
  * 位运算
  */
-public class ByteT {
+public class BitT {
     public static void main(String[] args) {
         // 左移，  101 << 2,   左移两位 1 0100 = 2^2+2^4=20
         // 左移低位补0，右移高位补0

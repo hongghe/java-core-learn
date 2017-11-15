@@ -52,6 +52,7 @@ public class DynamicProxyDemo {
  */
 interface DynamicSubject {
     void request();
+    void request1();
 }
 
 /**
@@ -61,6 +62,11 @@ class RealsSubject implements DynamicSubject {
     @Override
     public void request() {
         System.out.println("====RealSubject======");
+    }
+
+    @Override
+    public void request1() {
+        System.out.println("=====another subject=======");
     }
 }
 

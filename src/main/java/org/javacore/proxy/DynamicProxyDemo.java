@@ -1,5 +1,6 @@
 package org.javacore.proxy;
 
+import java.lang.reflect.Field;
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
@@ -16,12 +17,31 @@ import java.lang.reflect.Proxy;
 public class DynamicProxyDemo {
 
     public static void main(String[] args) {
+        Class<?>[] c1 = RealsSubject.class.getInterfaces();
+        System.out.println(c1[0]);
         DynamicSubject subject = new RealsSubject();
         // 调用类
         ProxyHandler invocationHandler = new ProxyHandler(subject);
         // 创建代理对象
-        DynamicSubject ProxySubject = (DynamicSubject) Proxy.newProxyInstance(RealsSubject.class.getClassLoader(), RealsSubject.class.getInterfaces(), invocationHandler);
-        ProxySubject.request();
+        DynamicSubject proxySubject = (DynamicSubject) Proxy.newProxyInstance(RealsSubject.class.getClassLoader(), RealsSubject.class.getInterfaces(), invocationHandler);
+        proxySubject.request();
+        // 可以看到代理类是$Proxy0，我们用到的就是这动态代理类
+        System.out.println("代理类:" + proxySubject.getClass().toString());
+        System.out.println("代理类的属性：");
+        Field[] fields = proxySubject.getClass().getDeclaredFields();
+        for(Field field : fields) {
+            System.out.print(field.getName() + ",");
+        }
+        System.out.println("\n代理类的方法：");
+        Method[] methods = proxySubject.getClass().getMethods();
+        for (Method method : methods) {
+            System.out.print(method.getName() + ",");
+        }
+        System.out.println("\n代理类实现的接口：");
+        Class<?>[] interfaces = proxySubject.getClass().getInterfaces();
+        for (Class infs : interfaces) {
+            System.out.println(infs);
+        }
     }
 
 }
@@ -55,7 +75,10 @@ class ProxyHandler implements InvocationHandler {
         this.subject =subject;
     }
 
-
+    /**
+     * 代理类的实例，要代理的方法，和参数
+     * 这方法不是我们显示的调用
+     */
     @Override
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
         System.out.println("======befor======");

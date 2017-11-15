@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 
 /**
+ * AOP简单实现
  * @Author: HaoBin
  * @Date 2017/10/17 11:28
  */
@@ -16,9 +17,12 @@ public class MyAdvice implements Advice {
 
     public static void main(String[] args) {
         Collection proxy3 = (Collection) getProxy(new ArrayList(), new MyAdvice());
-        proxy3.add("111");
-        proxy3.add("222");
-        System.out.println(proxy3.size());
+        Class<?>[] interfaces = proxy3.getClass().getInterfaces();
+        for (Class c1 : interfaces) {
+            System.out.println(c1);
+        }
+//        proxy3.add("111");
+//        System.out.println(proxy3.size());
     }
     @Override
     public void beforMethod(Method method) {

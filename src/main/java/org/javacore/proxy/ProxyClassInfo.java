@@ -13,6 +13,7 @@ import java.util.Collection;
 public class ProxyClassInfo {
 
     public static void main(String[] args) {
+        // 创建代理类
         Class clazzProxy1 = Proxy.getProxyClass(Collection.class.getClassLoader(), Collection.class);
         System.out.println(clazzProxy1);
 //        printConstructors(clazzProxy1);

@@ -34,7 +34,7 @@ public class BufferedInputFileT {
 	public static void main(String[] rags) throws IOException {
 		// 缓冲输入文件，并打印
 		System.out.println(read(
-				"src" + File.separator +
+				"src" + File.separator + "main" + File.separator + "java" + File.separator +
 				"org" + File.separator +
 				"javacore" + File.separator +
 				"io" + File.separator +

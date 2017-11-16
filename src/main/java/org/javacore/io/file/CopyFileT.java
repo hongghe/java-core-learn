@@ -1,46 +1,31 @@
-package org.javacore.io;
+package org.javacore.io.file;
 
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
-/*
- * Copyright [2015] [Jeff Lee]
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- * 
- *   http://www.apache.org/licenses/LICENSE-2.0
- * 
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 /**
  * @author Jeff Lee
  * @since 2015-8-11 11:44:59
  * 文件复制
+ * 通过文件输入输出流来完成复制
  */
 public class CopyFileT {
 	public static void main(String[] args) throws IOException {
-		String dir = "src" + File.separator +
+		String dir = "src" + File.separator + "main" + File.separator + "java" + File.separator +
 				"org" + File.separator +
 				"javacore" + File.separator +
-				"io";
-		
-		copyFile(dir + File.separator + "/CopyFileT.java", "D://Copy.java");
+				"io" + File.separator + "file";
+
+		copyFile(dir + File.separator + "/CopyFileT.java", "G://Copy.java");
 	}
-	
-	public static void copyFile(String srcFile,String destFile) 
+
+	public static void copyFile(String srcFile,String destFile)
 		throws IOException {
 		copyFile(new File(srcFile), new File(destFile));
 	}
-	
+
 	public static void copyFile(File srcFile,File destFile)
 		throws IOException {
 		// 文件不存在
@@ -55,6 +40,7 @@ public class CopyFileT {
 		FileOutputStream out = new FileOutputStream(destFile);
 		byte[] bytes = new byte[2 * 1024];
 		int b;
+		// 一次读2K
 		while ((b=in.read(bytes, 0, bytes.length)) != -1) {
 			out.write(bytes, 0, b);
 			out.flush();

@@ -1,7 +1,5 @@
 package org.javacore.nio;
 
-import org.javacore.io.RandomAccessFileT;
-
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
 import java.io.DataInputStream;

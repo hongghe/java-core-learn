@@ -9,21 +9,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.TreeSet;
 
-/*
- * Copyright [2015] [Jeff Lee]
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- * 
- *   http://www.apache.org/licenses/LICENSE-2.0
- * 
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
 
 /**
  * @author Jeff Lee
@@ -56,7 +41,7 @@ public class TextFile extends ArrayList<String> {
 		}
 		return sb.toString();
 	}
-	
+
 	// 将字符串写入一个文本文件
 	public static void write(String fileName,String text) {
 		try {
@@ -73,18 +58,18 @@ public class TextFile extends ArrayList<String> {
 			throw new RuntimeException(e);
 		}
 	}
-	
+
 	// 通过正则匹配，读取文件
 	public TextFile(String fileName,String splitter) {
 		super(Arrays.asList(read(fileName).split(splitter)));
 		// 移除一个空格位置
 		if (get(0).equals("")) remove(0);
 	}
-	
+
 	public TextFile(String fileName) {
 		this(fileName, "\n");
 	}
-	
+
 	// 写入一个文本文件
 	public void write(String fileName) {
 		try {
@@ -100,21 +85,21 @@ public class TextFile extends ArrayList<String> {
 		} catch (IOException e) {
 			throw new RuntimeException(e);
 		}
-		
+
 	}
-	
+
 	public static void main(String[] args) {
 		// 读取文件
 		String file = read("src/org/javacore/io/TextFile.java");
 		// 写入到test.txt
 		write("test.txt", file);
-		
+
 		TextFile text = new TextFile("test.txt");
 		text.write("test2.txt");
-		
+
 		TreeSet<String> words = new TreeSet<>(
 				new TextFile("src/org/javacore/io/TextFile.java","\\W+"));
 		System.out.println(words.headSet("a"));
-		
+
 	}
 }

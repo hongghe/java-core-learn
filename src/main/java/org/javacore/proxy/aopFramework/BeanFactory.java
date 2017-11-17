@@ -23,6 +23,7 @@ public class BeanFactory {
         String className = properties.getProperty(name);
         Object bean = null;
         try {
+            // 实例化配置文件的类
             Class clazz = Class.forName(className);
             bean = clazz.newInstance();
         } catch (ClassNotFoundException e) {
@@ -32,12 +33,15 @@ public class BeanFactory {
         } catch (IllegalAccessException e) {
             e.printStackTrace();
         }
+        // 如果是ProxyFactoryBean的实例
         if(bean instanceof ProxyFactoryBean) {
             ProxyFactoryBean proxyFactoryBean = (ProxyFactoryBean) bean;
             Advice advice = null;
             Object target = null;
             try {
+                // advice Myadvice
                 advice = (Advice) Class.forName(properties.getProperty(name + ".advice")).newInstance();
+                // target any collection
                 target = Class.forName(properties.getProperty(name + ".target")).newInstance();
             } catch (ClassNotFoundException e) {
                 e.printStackTrace();
@@ -49,6 +53,7 @@ public class BeanFactory {
 
             proxyFactoryBean.setAdvice(advice);
             proxyFactoryBean.setTarget(target);
+            // 获得动态代理类实例
             Object proxy = ((ProxyFactoryBean) bean).getProxy();
             return proxy;
         }

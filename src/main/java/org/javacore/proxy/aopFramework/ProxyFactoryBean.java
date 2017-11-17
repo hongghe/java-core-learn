@@ -9,9 +9,12 @@ import java.lang.reflect.Proxy;
  * @Date 2017/10/17 23:27
  */
 public class ProxyFactoryBean {
+    // 委托类
     private Object target;
+    // 实现接口
     private Advice advice;
 
+    // 返回代理类
     public Object getProxy() {
         Object proxy = Proxy.newProxyInstance(target.getClass().getClassLoader(), target.getClass().getInterfaces(), new InvocationHandler() {
             @Override

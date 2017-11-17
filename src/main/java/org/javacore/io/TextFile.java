@@ -90,7 +90,7 @@ public class TextFile extends ArrayList<String> {
 
 	public static void main(String[] args) {
 		// 读取文件
-		String file = read("src/org/javacore/io/TextFile.java");
+		String file = read("src/main/java/org/javacore/io/TextFile.java");
 		// 写入到test.txt
 		write("test.txt", file);
 
@@ -98,7 +98,7 @@ public class TextFile extends ArrayList<String> {
 		text.write("test2.txt");
 
 		TreeSet<String> words = new TreeSet<>(
-				new TextFile("src/org/javacore/io/TextFile.java","\\W+"));
+				new TextFile("src/main/java/org/javacore/io/TextFile.java","\\W+"));
 		System.out.println(words.headSet("a"));
 
 	}

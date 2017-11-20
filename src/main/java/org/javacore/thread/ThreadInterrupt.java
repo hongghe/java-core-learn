@@ -1,7 +1,7 @@
 package org.javacore.thread;
 
 /**
- * Created by bysocket on 16/2/24.
+ *
  */
 public class ThreadInterrupt {
     public static void main(String[] args) throws InterruptedException {

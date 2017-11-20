@@ -1,4 +1,4 @@
-package org.javacore.thread;
+package org.javacore.thread.basic;
 
 
 /**
@@ -23,7 +23,7 @@ public class LiftOff implements Runnable{
     public void run() {
         while (countDown-- > 0){
             System.out.println(status());
-            // 暂停当前正在执行线程，并执行其他线程。
+            // 暂停当前正在执行线程，并执行其他线程 yield理解为线程让步，从执行态变为就绪态
             Thread.yield();
         }
     }

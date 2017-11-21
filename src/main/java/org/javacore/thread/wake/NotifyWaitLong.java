@@ -19,7 +19,7 @@ class ThreadB extends Thread {
         }
     }
 }
-public class NotifyAll {
+public class NotifyWaitLong {
     public static void main(String[] args) {
         ThreadB t1 = new ThreadB("t1");
 
@@ -32,7 +32,7 @@ public class NotifyAll {
                 System.out.println(Thread.currentThread().getName() + " call wait ");
                 t1.wait(3000);
 
-                System.out.println(Thread.currentThread().getName() + " continue");
+                System.out.println(Thread.currentThread().getName() + " continue ");
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }

@@ -1,4 +1,4 @@
-package org.javacore.innerclass;
+package org.javacore.base.innerclass;
 
 
 import org.javacore.rtti.ClassInitialization;
@@ -56,7 +56,7 @@ public class LoadTurn {
         System.out.println(Initable.staticFinal);
         System.out.println(Initable.staticFinal2);
         System.out.println(Initable2.staticNonFinal);
-        Class initable3 = Class.forName("org.javacore.innerclass.Initable3");
+        Class initable3 = Class.forName("org.javacore.base.innerclass.Initable3");
         System.out.println("After creating Initable3 ref");
         System.out.println(Initable3.staticNonFinal);
         System.out.println(Initable2.a);

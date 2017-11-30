@@ -1,4 +1,4 @@
-package org.javacore.innerclass;
+package org.javacore.base.innerclass;
 
 /**
  * 匿名内部类的语法：

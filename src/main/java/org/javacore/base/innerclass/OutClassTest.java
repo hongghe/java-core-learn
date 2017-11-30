@@ -1,4 +1,4 @@
-package org.javacore.innerclass;
+package org.javacore.base.innerclass;
 
 /**
  * 内部类和静态内部类的使用

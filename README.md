@@ -21,7 +21,7 @@ Java核心技术学习代码兼测试案例<br>
 	├── org.javacore.io			// Java IO
 	├── org.javacore.io.byteoper		// Java IO 字节操作
 	├── org.javacore.io.zip			// Java IO ZIP压缩解压
-	├── org.javacore.nio			// Java NIO
+	├── org.nio			// Java NIO
 	├── org.javacore.base.reflection	// Java 反射
 	├── org.javacore.rtti			// Java RTTI
 	├── org.javacore.thread		// Java 线程
@@ -88,7 +88,7 @@ Java核心技术学习代码兼测试案例<br>
 	├── org.javacore.io.zip				// Java IO ZIP压缩解压
 	├── 	GZIPcompress.java				// GZIP简单使用
 	├── 	ZipCompress.java				// 利用Zip进行多文件保存
-	├── org.javacore.nio				// Java NIO
+	├── org.nio				// Java NIO
 	├── 	AvailableCharSets.java		 	// 可用的CharSet打印
 	├── 	BufferToText.java				// ByteBuffer与char之间转换的案例
 	├── 	ChannelCopy.java				// FileChannel的文件复制案例

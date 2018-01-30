@@ -1,4 +1,4 @@
-package org.jee.rpc.nio;
+package org.jee.rpc.nio.http_server;
 
 import java.io.IOException;
 import java.net.InetSocketAddress;
@@ -15,7 +15,7 @@ import java.util.Iterator;
 import java.util.Set;
 
 /**
- * 简单http服务器
+ * 基于NIO的简单http服务器
  *
  * @Author: HaoBin
  * @Date 2018/1/29 11:16
@@ -55,9 +55,9 @@ public class HttpServer {
      * 此方式适合：CPU密集型的操作，如需要处理大量业务、计算
      */
     public void listen() throws IOException{
+        // 监听端口
         this.channel = ServerSocketChannel.open();
-        ServerSocket socket = channel.socket();
-        socket.bind(new InetSocketAddress(_port));
+        this.channel.socket().bind(new InetSocketAddress(this._port));
         // 使用非阻塞模式，多道io
         channel.configureBlocking(false);
         System.out.println("server is open.....");
@@ -80,7 +80,7 @@ public class HttpServer {
      * @throws IOException
      */
     public void registerClient(SocketChannel client) throws IOException {
-        // 设置为非阻塞
+        // channel与select一起使用，必须设置为非阻塞
         client.configureBlocking(false);
         // selector事件
         client.register(selector, SelectionKey.OP_READ);
@@ -100,17 +100,16 @@ public class HttpServer {
             while (iterator.hasNext()) {
                 SelectionKey key = iterator.next();
                 SocketChannel client = (SocketChannel) key.channel();
-
                 if (key.isReadable()) {
                     this.read(key);
                 } else if (key.isWritable()) {
                     // write
                     this.write(key);
                 }
-
             }
         }
     }
+
 
     /**
      * 读信息

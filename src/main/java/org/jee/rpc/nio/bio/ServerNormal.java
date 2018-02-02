@@ -16,7 +16,7 @@ public class ServerNormal {
     private static ServerSocket server;
 
     public static void start() throws IOException {
-
+        start(ServerNormal.DEFAULT_PORT);
     }
 
     public synchronized static void start(int port) throws IOException{

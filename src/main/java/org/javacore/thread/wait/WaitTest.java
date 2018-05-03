@@ -28,7 +28,6 @@ public class WaitTest extends Thread{
                 synchronized (self) {
                     System.out.print(name);
                     count--;
-
                     self.notify();
                 }
                 try {
